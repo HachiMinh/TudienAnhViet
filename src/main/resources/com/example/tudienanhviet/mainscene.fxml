@@ -16,7 +16,7 @@
             <HBox fx:id="menu" prefHeight="35.0" prefWidth="500.0">
                <children>
                   <JFXButton accessibleText="dictionary" buttonType="RAISED" prefHeight="35.0" prefWidth="100.0" styleClass="button1" stylesheets="@../../../style.css" text="Search" textFill="WHITE" />
-                  <JFXButton accessibleText="history" prefHeight="35.0" prefWidth="100.0" styleClass="button2" stylesheets="@../../../style.css" text="Online Dict" textFill="WHITE" />
+                  <JFXButton accessibleText="online_dict" prefHeight="35.0" prefWidth="100.0" styleClass="button2" stylesheets="@../../../style.css" text="Online Dict" textFill="WHITE" />
                   <JFXButton accessibleText="game" prefHeight="35.0" prefWidth="100.0" styleClass="button3" stylesheets="@../../../style.css" text="Game" textFill="WHITE" />
                   <JFXButton accessibleText="addword" prefHeight="35.0" prefWidth="100.0" styleClass="button4" stylesheets="@../../../style.css" text="Your Word" textFill="WHITE" />
                </children>

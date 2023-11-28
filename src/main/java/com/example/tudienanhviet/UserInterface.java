@@ -34,23 +34,23 @@ public class    UserInterface extends ChangeScene implements Initializable {
 
         for (Node node : menu.getChildren()) {
             if (node.getAccessibleText() != null) {
-                node.addEventHandler(MouseEvent.MOUSE_CLICKED, (e) -> {
+                node.addEventHandler(MouseEvent.MOUSE_CLICKED, (ex) -> {
                     switch (node.getAccessibleText()) {
                         case "dictionary":
                             try {Change("searchingzone.fxml", root);}
-                            catch (Exception ex) {}
+                            catch (Exception e) {}
                             break;
-                        case "history":
-                            try {Change("", root);}
-                            catch (Exception ex) {}
+                        case "online_dict":
+                            try {Change("googletranslate.fxml", root);}
+                            catch (Exception e) {}
                             break;
                         case "game":
                             try {Change("ChooseGame.fxml", root);}
-                            catch (Exception ex) {}
+                            catch (Exception e) {}
                             break;
                         case "addword":
                             try {Change("", root);}
-                            catch (Exception ex) {}
+                            catch (Exception e) {}
                             break;
                     }
                 });

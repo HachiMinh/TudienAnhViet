@@ -220,3 +220,33 @@
     -fx-background-radius: 10 10 10 10;
 }
 
+.google-trans_icon
+{
+    -fx-background-color: #CBD465;
+    -fx-background-radius: 0 0 0 0;
+}
+
+.swap_button
+{
+    -fx-background-color: white;
+    -fx-background-radius: 5 5 5 5;
+}
+
+.swap_button:hover
+{
+    -fx-background-color: #CBD098;
+    -fx-background-radius: 5 5 5 5;
+}
+
+.swap_button:pressed
+{
+    -fx-background-color: #A1A85C;
+    -fx-background-radius: 5 5 5 5;
+}
+
+.gt_textarea
+{
+    -fx-background-color: white;
+    -fx-background-radius: 5 5 5 5;
+}
+
