@@ -15,7 +15,7 @@ public class Dictionaries {
     public Dictionaries(){
         BufferedReader br;
         try {
-            FileInputStream fstream = new FileInputStream("D:\\Coding\\Java\\EnglishDictionaryApp\\src\\main\\java\\com\\example\\englishdictionaryapp\\Database\\anhviet109K.txt");
+            FileInputStream fstream = new FileInputStream("src\\main\\java\\com\\example\\tudienanhviet\\Database\\anhviet109K.txt");
             br = new BufferedReader(new InputStreamReader(fstream));
 
         String st;
