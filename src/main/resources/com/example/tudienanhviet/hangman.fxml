@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tudienanhviet.zones.HangmanGame">
+   <children>
+      <ImageView fitHeight="405.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/Archons.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="160.0" fitWidth="300.0" layoutX="70.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/GItemplate.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="130.0" fitWidth="200.0" layoutX="110.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/FireEmblemTemplate.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman_Image" fitHeight="220.0" fitWidth="190.0" layoutX="400.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="lives_text" layoutX="135.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lives: 7" textAlignment="CENTER" wrappingWidth="150.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <FlowPane fx:id="button_pane" alignment="TOP_CENTER" hgap="3.0" layoutX="110.0" layoutY="310.0" prefHeight="50.0" prefWidth="500.0" vgap="3.0">
+         <children>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" prefWidth="20.0" stylesheets="@../../../style.css" text="A">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="B">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="C">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="D">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="E">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="F">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="G">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="H">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" prefWidth="20.0" stylesheets="@../../../style.css" text="I" textAlignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="J">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="K">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="L">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="M">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="N">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="O">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="P">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="Q">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="R">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="S">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="T">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="U">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="V">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="W">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="X">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="Y">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" minWidth="33.0" mnemonicParsing="false" onAction="#clicked" stylesheets="@../../../style.css" text="Z">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </FlowPane>
+      <Text fx:id="guess_text" layoutX="85.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="250.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button mnemonicParsing="false" onAction="#ReturnBack" prefHeight="30.0" prefWidth="30.0" styleClass="hangman_button" stylesheets="@../../../style.css">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pictures/return.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="50.0" mnemonicParsing="false" onAction="#TryAgain" styleClass="hangman_button" stylesheets="@../../../style.css">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pictures/tryagain.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
