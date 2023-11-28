@@ -214,3 +214,9 @@
     -fx-background-radius: 0 40 40 0;
 }
 
+.google-trans_label
+{
+    -fx-background-color: #D8DAB6;
+    -fx-background-radius: 10 10 10 10;
+}
+
