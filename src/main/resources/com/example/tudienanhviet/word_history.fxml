@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tudienanhviet.zones.WordHistory">
+   <children>
+      <ImageView fitHeight="405.0" fitWidth="720.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../pictures/yaoyao.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="230.0" prefHeight="50.0" prefWidth="260.0" styleClass="history_label" stylesheets="@../../../style.css" text="Word Searching History" textFill="#461c79">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ReturnBack" prefHeight="30.0" prefWidth="30.0" styleClass="hangman_button" stylesheets="@../../../style.css">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pictures/return.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="history_table" layoutX="60.0" layoutY="125.0" prefHeight="250.0" prefWidth="600.0" styleClass="history_table-view" stylesheets="@../../../style.css">
+        <columns>
+          <TableColumn fx:id="date_search" prefWidth="200.0" text="Date Searched" />
+          <TableColumn fx:id="history_word" prefWidth="400.0" text="Word" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
