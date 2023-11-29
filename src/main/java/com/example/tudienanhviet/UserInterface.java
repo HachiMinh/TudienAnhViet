@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import com.example.tudienanhviet.Database.*;
 
-public class    UserInterface extends ChangeScene implements Initializable {
+public class UserInterface extends ChangeScene implements Initializable {
     @FXML
     public AnchorPane root;
     @FXML

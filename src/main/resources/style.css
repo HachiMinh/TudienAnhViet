@@ -250,3 +250,15 @@
     -fx-background-radius: 5 5 5 5;
 }
 
+.history_label
+{
+    -fx-background-color: #A1A85C;
+    -fx-background-radius: 5 5 5 5;
+    -fx-alignment: center;
+}
+
+.history_table-view
+{
+    -fx-background-radius: 5 5 5 5;
+}
+

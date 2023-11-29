@@ -13,6 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.input.InputEvent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -24,22 +26,31 @@ public class UI_dictionary implements Initializable {
     private TextArea result;
     @FXML
     private ComboBox search;
+    @FXML
+    private AnchorPane search_root;
 
-    private String word;
+    public static AnchorPane search_global = new AnchorPane();
+    public static boolean history_check = false;
+    private static String word = "";
 
     final static Dictionaries d = UserInterface.dictionary;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //search.setPromptText("Search");
+        search_global = search_root;
+        search_global.setVisible(false);
         for(int i = 0; i < UserInterface.dictionary.getSizeofDictionary();i++) {
             search.getItems().add(UserInterface.dictionary.takeWord(i));
             new AutoCompleteComboBoxListener<>(search);
         }
+        if (!word.isBlank()) enter();
     }
 
-    public void confirm(ActionEvent event) throws Exception {
-        word = (String) search.getSelectionModel().getSelectedItem();
+    public static void setWord(String s) {
+        word = s;
+    }
+
+    public void enter() {
         if (Objects.equals(word, null)) return;
         for(int i = 0; i < d.getSizeofDictionary(); i++) {
             if(word.equals(d.takeWord(i).getWord_spelling())) {
@@ -49,6 +60,21 @@ public class UI_dictionary implements Initializable {
                 break;
             }
         }
+        if (!history_check) {
+            WordHistory.AddtoSQL(word);
+        }
+        history_check = false;
+    }
+
+    public void confirm(ActionEvent event) throws Exception {
+        word = (String) search.getSelectionModel().getSelectedItem();
+        enter();
+    }
+
+    public void history_view(ActionEvent event) throws Exception {
+        search_global.setVisible(true);
+        ChangeScene changeScene = new ChangeScene();
+        changeScene.Change("word_history.fxml",search_global);
     }
 
     public void listening(ActionEvent event) throws Exception {
@@ -110,13 +136,7 @@ public class UI_dictionary implements Initializable {
                 } else if (event.getCode() == KeyCode.ENTER) {
                     comboBox.hide();
                     word = (String) search.getSelectionModel().getSelectedItem();
-                    for(int i = 0; i < d.getSizeofDictionary(); i++) {
-                        if(word.equals(d.takeWord(i).getWord_spelling())) {
-                            Word w = d.takeWord(i);
-                            String ans = w.print();
-                            result.setText(ans);
-                        }
-                    }
+                    enter();
                     return;
                 }
 
