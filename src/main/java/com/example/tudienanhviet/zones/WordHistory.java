@@ -18,10 +18,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -73,7 +70,7 @@ public class WordHistory implements Initializable {
                 } catch (Exception e) {}
             }
         }
-        word_list.reversed();
+        Collections.reverse(word_list);
         date_search.setCellValueFactory(new PropertyValueFactory<Word_Searched_Info, Date>("date"));
         history_word.setCellValueFactory(new PropertyValueFactory<Word_Searched_Info, String>("word"));
         history_table.setItems(word_list);
