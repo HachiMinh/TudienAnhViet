@@ -40,7 +40,17 @@
                   </ImageView>
                </graphic>
             </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="610.0" layoutY="50.0" onAction="#history_view" prefHeight="40.0" prefWidth="60.0" styleClass="search_button" stylesheets="@../../../style.css" text="   ">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pictures/history.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="search_root" prefHeight="405.0" prefWidth="720.0" />
    </children>
 </AnchorPane>

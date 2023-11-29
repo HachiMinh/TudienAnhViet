@@ -4,6 +4,8 @@ module com.example.tudienanhviet {
     requires com.jfoenix;
     requires java.desktop;
     requires voicerss.tts;
+    requires org.xerial.sqlitejdbc;
+    requires org.slf4j;
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
