@@ -72,4 +72,12 @@ public class Word {
         }
         return ans;
     }
+
+    public int meaning_size() {
+        return Word_Meanings.size();
+    }
+
+    public Meaning getMeaning() {
+        return Word_Meanings.get(0);
+    }
 }

@@ -36,20 +36,14 @@ public class UI_dictionary implements Initializable {
     public static AnchorPane search_global = new AnchorPane();
     public static boolean history_check = false;
     private static String word = "";
-    Connection connection = null;
-    PreparedStatement prepare = null;
-    ResultSet resultset = null;
-    public final String addword_path = "jdbc:sqlite:src/main/resources/AddWord.sqlite";
 
-    static Dictionaries d;
+    public static Dictionaries d = addDatabase();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         search_global = search_root;
         search_global.setVisible(false);
-        d = new Dictionaries();
         //System.out.println(UserInterface.dictionary.getSizeofDictionary());
-        addDatabase();
         for(int i = 0; i < d.getSizeofDictionary();i++) {
             search.getItems().add(d.takeWord(i));
             new AutoCompleteComboBoxListener<>(search);
@@ -57,10 +51,14 @@ public class UI_dictionary implements Initializable {
         if (!word.isBlank()) enter();
     }
 
-    public void addDatabase() {
+    public static Dictionaries addDatabase() {
+        Dictionaries dict = UserInterface.dictionary;
+        Connection connection = null;
+        PreparedStatement prepare = null;
+        ResultSet resultset = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            connection = DriverManager.getConnection(addword_path);
+            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/AddWord.sqlite");
             prepare = connection.prepareStatement("SELECT * FROM MyWord");
             resultset = prepare.executeQuery();
 
@@ -69,7 +67,7 @@ public class UI_dictionary implements Initializable {
                 String meaning = resultset.getString(2);
                 Word w = new Word(word, "");
                 w.addMeaning(meaning);
-                d.addword(w);
+                dict.addword(w);
             }
         } catch (Exception e) {}
         finally {
@@ -89,6 +87,7 @@ public class UI_dictionary implements Initializable {
                 } catch (Exception e) {}
             }
         }
+        return dict;
     }
 
     public static void setWord(String s) {

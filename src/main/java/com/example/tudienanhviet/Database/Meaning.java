@@ -25,4 +25,8 @@ public class Meaning {
         }
         return ans;
     }
+
+    public String getMeaning() {
+        return meaning;
+    }
 }

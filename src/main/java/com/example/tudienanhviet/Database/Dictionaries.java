@@ -2,6 +2,8 @@ package com.example.tudienanhviet.Database;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
+
 public class Dictionaries {
 
     ArrayList<Word> List_of_words = new ArrayList<Word>();
@@ -82,6 +84,20 @@ public class Dictionaries {
 
     public void addword(Word w) {
         List_of_words.add(w);
+    }
+
+    public void delword(Word w) {
+        for (int i = 0; i < List_of_words.size(); i++) {
+            Word word = List_of_words.get(i);
+            if(w.getWord_spelling().equals(word.getWord_spelling())) {
+                if (word.meaning_size() == 1) {
+                    if(word.getMeaning().getMeaning().equals(w.getMeaning().getMeaning())) {
+                        List_of_words.remove(i);
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     public ArrayList<Word> normalWord() {

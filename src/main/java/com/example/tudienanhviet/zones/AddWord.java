@@ -98,6 +98,7 @@ public class AddWord implements Initializable {
 
     public void Delete(ActionEvent event) throws Exception {
         Word w = my_word_table.getSelectionModel().getSelectedItem();
+        UI_dictionary.d.delword(w);
         word_list.remove(w);
         try {
             Class.forName("org.sqlite.JDBC");
@@ -129,6 +130,7 @@ public class AddWord implements Initializable {
         addword_meaning.setText("");
         Word w = new Word(word, "");
         w.addMeaning(meaning);
+        UI_dictionary.d.addword(w);
         word_list.add(w);
         AddtoSQL(word, meaning);
     }
