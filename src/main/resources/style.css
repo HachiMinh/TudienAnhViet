@@ -262,3 +262,8 @@
     -fx-background-radius: 5 5 5 5;
 }
 
+.add-word_button
+{
+    -fx-background-color: #BCCB2A;
+}
+

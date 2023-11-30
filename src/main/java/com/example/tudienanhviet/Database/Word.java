@@ -53,9 +53,14 @@ public class Word {
     public String getWord_pronunciation() {
         return word_pronunciation;
     }
+    public void addMeaning(String text) {
+        Word_Meanings.add(new Meaning(text));
+    }
 
     public String print() {
-        String ans = word_spelling + "\t" + "[" + word_pronunciation + "]" + "\n";
+        String ans = word_spelling + "\t";
+        if (!word_pronunciation.isBlank()) ans += "[" + word_pronunciation + "]";
+        ans += "\n";
         for (int i = 0; i < Word_Meanings.size(); i++) {
             ans += Word_Meanings.get(i).print();
         }

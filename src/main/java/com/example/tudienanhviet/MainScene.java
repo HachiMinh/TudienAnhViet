@@ -20,7 +20,6 @@ public class MainScene extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("mainscene.fxml"));
         Scene scene = new Scene(root);
-
         InputStream inputStream = new FileInputStream("src/main/resources/pictures/GIIcon.png");
         Image icon = new Image(inputStream);
         stage.getIcons().add(icon);

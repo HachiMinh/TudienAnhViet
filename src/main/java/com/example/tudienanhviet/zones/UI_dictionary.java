@@ -16,6 +16,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -32,18 +36,59 @@ public class UI_dictionary implements Initializable {
     public static AnchorPane search_global = new AnchorPane();
     public static boolean history_check = false;
     private static String word = "";
+    Connection connection = null;
+    PreparedStatement prepare = null;
+    ResultSet resultset = null;
+    public final String addword_path = "jdbc:sqlite:src/main/resources/AddWord.sqlite";
 
-    final static Dictionaries d = UserInterface.dictionary;
+    static Dictionaries d;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         search_global = search_root;
         search_global.setVisible(false);
-        for(int i = 0; i < UserInterface.dictionary.getSizeofDictionary();i++) {
-            search.getItems().add(UserInterface.dictionary.takeWord(i));
+        d = new Dictionaries();
+        //System.out.println(UserInterface.dictionary.getSizeofDictionary());
+        addDatabase();
+        for(int i = 0; i < d.getSizeofDictionary();i++) {
+            search.getItems().add(d.takeWord(i));
             new AutoCompleteComboBoxListener<>(search);
         }
         if (!word.isBlank()) enter();
+    }
+
+    public void addDatabase() {
+        try {
+            Class.forName("org.sqlite.JDBC");
+            connection = DriverManager.getConnection(addword_path);
+            prepare = connection.prepareStatement("SELECT * FROM MyWord");
+            resultset = prepare.executeQuery();
+
+            while (resultset.next()) {
+                String word = resultset.getString(1);
+                String meaning = resultset.getString(2);
+                Word w = new Word(word, "");
+                w.addMeaning(meaning);
+                d.addword(w);
+            }
+        } catch (Exception e) {}
+        finally {
+            if (resultset != null) {
+                try {
+                    resultset.close();
+                } catch (Exception e) {}
+            }
+            if (prepare != null) {
+                try {
+                    prepare.close();
+                } catch (Exception e) {}
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {}
+            }
+        }
     }
 
     public static void setWord(String s) {
@@ -75,6 +120,11 @@ public class UI_dictionary implements Initializable {
         search_global.setVisible(true);
         ChangeScene changeScene = new ChangeScene();
         changeScene.Change("word_history.fxml",search_global);
+    }
+
+    public void addword_view(ActionEvent event) throws Exception {
+        ChangeScene changeScene = new ChangeScene();
+        changeScene.Change("addword.fxml",UserInterface.global);
     }
 
     public void listening(ActionEvent event) throws Exception {

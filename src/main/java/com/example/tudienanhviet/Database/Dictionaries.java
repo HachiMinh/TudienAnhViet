@@ -80,6 +80,10 @@ public class Dictionaries {
         return List_of_words.get(index);
     }
 
+    public void addword(Word w) {
+        List_of_words.add(w);
+    }
+
     public ArrayList<Word> normalWord() {
         ArrayList<Word> nw = new ArrayList<Word>();
         for (int i = 0; i < List_of_words.size(); i++) {

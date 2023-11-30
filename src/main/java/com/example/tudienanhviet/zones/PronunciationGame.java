@@ -96,7 +96,7 @@ public class PronunciationGame implements Initializable {
     }
 
     public void enter(ActionEvent event) throws Exception {
-        if (!check) return;;
+        if (!check) return;
         confirm();
     }
 

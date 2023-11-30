@@ -48,10 +48,6 @@ public class UserInterface extends ChangeScene implements Initializable {
                             try {Change("ChooseGame.fxml", root);}
                             catch (Exception e) {}
                             break;
-                        case "addword":
-                            try {Change("", root);}
-                            catch (Exception e) {}
-                            break;
                     }
                 });
             }
